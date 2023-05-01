@@ -1,4 +1,4 @@
-- English version: [README.md](README.md)
+- Versão em [português](README.pt-br.md)
 
 # CpuSim
 A basic Intel 8086 CPU simulator.
