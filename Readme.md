@@ -36,17 +36,17 @@ which contains binary code with one and several `MOV` instructions, respectively
 
 Below is the binary code of `single_register_mov`. Note that it's only 2 bytes long.
 
-![Program execution example](./images/L1-3.png)
+![](images/L1-3.png)
 
 The program receives as the first input parameter the name of the file to be read and prints the
 screen decoding. The figure below shows an example of running the program.
 
-![Program execution example](./images/L1-1.png)
+![](images/L1-1.png)
 
 **Note**: You can optionally run debug mode for more information
 about what is going on, such as the values being temporarily read from the file.
 
-![Program execution example](./images/L1-2.png)
+![](images/L1-2.png)
 
 The respective `.asm` extension files contain the 8086 assembly code that generated the input files.
 Therefore, the output result of the program must be the same as the `.asm` file.
