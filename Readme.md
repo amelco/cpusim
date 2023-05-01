@@ -57,3 +57,15 @@ The generated binary can be compared with the input file to verify that the prog
 On windows, to compare two binary files, just use the command `fc file1 file2`.
 
 Link to code: [Lesson 1](https://github.com/amelco/cpusim/commit/cb10100c4bbd553a723317b0c8ace3d556677f5d).
+
+## 2nd Lesson: Decoding Multiple Instructions and Suffixes
+In this lesson, we will learn how to decode more instructions and suffixes. Let's begin implementing the 
+**immediate to register** instruction.
+This instruction is used to move a value directly to a register.
+
+A file called, `single_immediate.asm`, contains the assembly code for this instruction.
+Generate the binary file (`nasm single_immediate.asm`) and run the program with the nasm output as the program input:
+`cpusim single_immediate`.
+You can also run the program in debug mode (`cpusim single_immediate debug`) to see the values being read from the file.
+
+Link to **immediate mode** commit: [Lesson 2, immediate](https://github.com/amelco/cpusim/commit/6d764fdb51409933250fddd003fe5298c429be16)

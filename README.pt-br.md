@@ -57,3 +57,13 @@ O binário gerado pode ser comparado com o arquivo de entrada para verificar se o
 No windows, para comparar dois arquivos binários, basta usar o comando `fc arquivo1 arquivo2`.
 
 Link para o código: [Lição 1](https://github.com/amelco/cpusim/commit/cb10100c4bbd553a723317b0c8ace3d556677f5d).
+
+## 2ª Aula: Decodificando Múltiplas Instruções e Sufixos
+Nesta lição, aprenderemos como decodificar mais instruções e sufixos. Vamos começar a implementar o
+Instrução **immediate to register**.
+Esta instrução é usada para mover um valor diretamente para um registrador.
+
+Um arquivo chamado `single_immediate.asm` contém o código assembly para esta instrução.
+Gere o arquivo binário (`nasm single_immediate.asm`) e execute o programa com a saída nasm como entrada do programa:
+`cpusim single_immediate`.
+Você também pode executar o programa no modo de depuração (`cpusim single_immediate debug`) para ver os valores sendo lidos do arquivo.
