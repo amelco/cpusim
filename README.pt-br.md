@@ -41,12 +41,12 @@ Abaixo, o código binário de `single_register_mov`. Note que são apenas 2 bytes.
 O programa recebe como primeiro parâmetro de entrada o nome do arquivo a ser lido e imprime a
 decodificação na tela. A figura abaixo mostra um exemplo de execução do programa.
 
-![](https://github.com/amelco/cpusim/blob/main/images/L1-3.PNG)
+![](https://github.com/amelco/cpusim/blob/main/images/L1-1.PNG)
 
 **Observação**: você pode , opcionalmente, executar o modo de debug para obter mais informações
 sobre o que está acontecendo, como os valores que estão sendo temporiariamente lidos do arquivo.
 
-![](https://github.com/amelco/cpusim/blob/main/images/L1-3.PNG)
+![](https://github.com/amelco/cpusim/blob/main/images/L1-2.PNG)
 
 Os respectivos arquivos de extensão `.asm` contém o código assembly 8086 que gerou os arquivos de entrada.
 Portanto, o resultado da saída do programa deve ser igual ao do arquivo `.asm`.
