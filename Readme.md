@@ -36,7 +36,7 @@ which contains binary code with one and several `MOV` instructions, respectively
 
 Below is the binary code of `single_register_mov`. Note that it's only 2 bytes long.
 
-![](L1-3.png)
+![](https://github.com/amelco/cpusim/blob/main/images/L1-3.PNG)
 
 The program receives as the first input parameter the name of the file to be read and prints the
 screen decoding. The figure below shows an example of running the program.
