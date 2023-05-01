@@ -26,4 +26,23 @@ Usaremos as seguintes instruções:
 
 É uma das instruções mais simples de decodificar, tornando-a uma boa introdução sobre como a CPU funciona.
 
+O objetivo dessa lição é criar um programa que leia um arquivo com instruções binárias em assembly 8086,
+decodifique a instrução `MOV` e imprima o resultado na tela. Para isso, temos dois arquivos de entrada
+```
+single_register_mov
+many_register_mov
+```
+que contém o código binário com uma e várias instruções `MOV`, respectivamente.
+
+O programa recebe como primeiro parâmetro de entrada o nome do arquivo a ser lido e imprime a
+decodificação na tela.
+
+Os respectivos arquivos de extensão `.asm` contém o código assembly 8086 que gerou os arquivos de entrada.
+Portanto, o resultado da saída do programa deve ser igual ao do arquivo `.asm`.
+
+**Fato interessante**: é possível gerar o binário da saída do programa usando o comando `nasm nome_do_arquivo.asm`
+(clique [aqui](https://www.nasm.us/) pra baixar o nasm).
+O binário gerado pode ser comparado com o arquivo de entrada para verificar se o programa está correto.
+No windows, para comparar dois arquivos binários, basta usar o comando `fc arquivo1 arquivo2`.
+
 Link para o código: [Lição 1](https://github.com/amelco/cpusim/commit/cb10100c4bbd553a723317b0c8ace3d556677f5d).
