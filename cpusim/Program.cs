@@ -23,9 +23,8 @@ Console.WriteLine("bits 16");
 for (int i = 0; i < input.Length; i += 2)
 {
     var byte1 = input[i];
+    if (i + 1 >= input.Length) break;
     var byte2 = input[i + 1];
-
-    //var opcode = (byte1 >> 2) & 0b100010;
 
     Opcode? opcode = GetOpcode(byte1);
     if (opcode is null)
@@ -34,7 +33,7 @@ for (int i = 0; i < input.Length; i += 2)
 
     string instrucao = "";
 
-    if (opcode == Opcode.mov)
+    if (opcode == Opcode.mov1)
     {
         instrucao = "mov ";
 
@@ -67,14 +66,38 @@ for (int i = 0; i < input.Length; i += 2)
         Debug.Info(isDebugging, $"{Convert.ToString(byte1, 2)} {Convert.ToString(byte2, 2)} => {instrucao}");
         Debug.Info(isDebugging, $"d: {d}\nw: {w}\nmod: {Convert.ToString(mod, 2)}\nreg: {Convert.ToString(reg, 2)}\nrm: {Convert.ToString(rm, 2)}");
     }
+    if (opcode == Opcode.mov3) // immediate to register
+    {
+        bool w = ((byte1 >> 3) & 0b00001) == 0b1;
+        var reg = byte1 & 0b111;
+        instrucao = $"mov {GetRegisterName(reg, w)}, ";
+        if (!w)
+        {
+            instrucao += $"{byte2}";
+        }
+        else
+        {
+            var byte3 = input[i + 2];
+            i++;
+            var data = (byte3 << 8) + byte2;
+            instrucao += $"{data}";
+        }
+
+        Debug.Info(isDebugging, $"{Convert.ToString(byte1, 2)} {Convert.ToString(byte2, 2)} => {instrucao}");
+        Debug.Info(isDebugging, $"w: {w}\nreg: {Convert.ToString(reg, 2)}");
+    }
 
     Console.WriteLine(instrucao);
 }
 
 Opcode? GetOpcode(byte byte1)
 {
-    if (((byte1 >> 2) & (int)Opcode.mov) == (int)Opcode.mov)
-        return Opcode.mov;
+    if (((byte1 >> 2) & 0b111111) == (int)Opcode.mov1)
+        return Opcode.mov1;
+    if (((byte1 >> 1) & 0b1111111) == (int)Opcode.mov2)
+        return Opcode.mov2;
+    if (((byte1 >> 4) & 0b1111) == (int)Opcode.mov3)
+        return Opcode.mov3;
 
     return null;
 }
