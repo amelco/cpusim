@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "cpusim": {
+      "commandName": "Project",
+      "commandLineArgs": "many_register_mov"
+    }
+  }
+}
