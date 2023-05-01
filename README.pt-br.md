@@ -67,3 +67,5 @@ Um arquivo chamado `single_immediate.asm` contém o código assembly para esta ins
 Gere o arquivo binário (`nasm single_immediate.asm`) e execute o programa com a saída nasm como entrada do programa:
 `cpusim single_immediate`.
 Você também pode executar o programa no modo de depuração (`cpusim single_immediate debug`) para ver os valores sendo lidos do arquivo.
+
+Link para o commit da inserção do **immediate mode**: [Lição 2, immediate](https://github.com/amelco/cpusim/commit/6d764fdb51409933250fddd003fe5298c429be16)
