@@ -3,7 +3,7 @@
 # CpuSim
 Um simulador básico de CPU Intel 8086.
 
-Baseado no curso **Computer, Enhance!** de Casey Muratori.
+Baseado no curso **Computer, Enhance!** de Casey Muratori e na documentação do [chip 8086 da Intel](https://edge.edx.org/c4x/BITSPilani/EEE231/asset/8086_family_Users_Manual_1_.pdf).
 
 Cada commit será uma nova lição. Assim, o primeiro commit será a lição 1.
 A ideia é criar o código para cada lição e colocá-lo aqui como forma de documentar meu progresso e,
@@ -17,7 +17,7 @@ Clone o repositório e execute-o no Visual Studio ou em qualquer outro editor/IDE
 É uma aplicação de console simples do dotnet 6.
 
 ### Como usar
-Uma vez compilado, basta digitar cpusim para mostrar a mensagem de uso (que pode ser diferente para cada commit) e ler as instruções.
+Uma vez compilado, basta digitar `cpusim` para mostrar a mensagem de uso (que pode ser diferente para cada commit) e ler as instruções.
 
 ## 1ª Lição: Decodificação de Instruções no 8086
 Nesta lição, aprenderemos como decodificar as instruções da CPU 8086.
@@ -34,8 +34,19 @@ many_register_mov
 ```
 que contém o código binário com uma e várias instruções `MOV`, respectivamente.
 
+Abaixo, o código binário de `single_register_mov`. Note que são apenas 2 bytes.
+
+![Exemplo de execução do programa](./images/L1-3.png)
+
 O programa recebe como primeiro parâmetro de entrada o nome do arquivo a ser lido e imprime a
-decodificação na tela.
+decodificação na tela. A figura abaixo mostra um exemplo de execução do programa.
+
+![Exemplo de execução do programa](./images/L1-1.png)
+
+**Observação**: você pode , opcionalmente, executar o modo de debug para obter mais informações
+sobre o que está acontecendo, como os valores que estão sendo temporiariamente lidos do arquivo.
+
+![Exemplo de execução do programa](./images/L1-2.png)
 
 Os respectivos arquivos de extensão `.asm` contém o código assembly 8086 que gerou os arquivos de entrada.
 Portanto, o resultado da saída do programa deve ser igual ao do arquivo `.asm`.

@@ -1,46 +1,59 @@
-- Versão em Português: [README.pt-br.md](README.pt-br.md)
+- English version: [README.md](README.md)
 
-# CpuSsim
+# CpuSim
 A basic Intel 8086 CPU simulator.
 
-Based on the course **Computer, Enhance!** by Casey Muratori. 
+Based on **Computer, Enhance!** course by Casey Muratori and documentation for [Intel 8086 chip](https://edge.edx.org/c4x/BITSPilani/EEE231/asset/8086_family_Users_Manual_1_.pdf).
 
-Every commit will be a new lesson. So the first, commit will be lesson 1.
-The idea is to make the code for every lesson and put it here as a form of documenting my progress and,
-at the same time, to serve as a code repository.
-It also allow to follow my way of thinking by getting the differences between commits.
+Each commit will be a new lesson. So the first commit will be lesson 1.
+The idea is to create code for each lesson and put it here as a way of documenting my progress and,
+at the same time serving as a code repository.
+It also lets you follow my thinking by getting the differences between commits.
 
-I will try to make everything, from documentation to code comments, both in english and portuguese.
+I'll try to do everything from documentation to code comments in both English and Portuguese.
 
 ### How to run
-Clone the repo and run it in Visual Studio or any other editor/IDE of preference.
-It is simple dotnet 6 console application.
+Clone the repository and run it in Visual Studio or any other preferred editor/IDE.
+It is a simple dotnet 6 console application.
 
-### How to use it
-Once compiled, simply type `cpusim` to show the usage message (it can be different for each commit) and read the instructions.
+### How to use
+Once compiled, just type `cpusim` to show the usage message (which can be different for each commit) and read the instructions.
 
 ## 1st Lesson: Instruction Decoding on the 8086
-In this lesson we will learn how to decode the instructions of the 8086 CPU. 
+In this lesson, we will learn how to decode 8086 CPU instructions.
 We will use the following instructions:
-`MOV` register to register.
+`MOV` record for record.
 
-It is one of the simplest instructions to decode, making it a good introduction on how the CPU works.
+It's one of the simplest instructions to decode, making it a good introduction to how the CPU works.
 
-The goal of this lesson is to create a program that reads a file with binary instructions in 8086 assembly,
-decodes the MOV instruction, and prints the result on the screen. To do this, we have two input files:
+The objective of this lesson is to create a program that reads a file with binary instructions in 8086 assembly,
+decode the `MOV` instruction and print the result to the screen. For this we have two input files
 ```
 single_register_mov
 many_register_mov
 ```
-which contain the binary code with one and several `MOV` instructions, respectively.
+which contains binary code with one and several `MOV` instructions, respectively.
 
-The program takes the name of the file to be read as the first input parameter and prints the decoding on the screen.
+Below is the binary code of `single_register_mov`. Note that it's only 2 bytes long.
 
-The respective files with the `.asm` extension contain the 8086 assembly code that generated the input files. 
-Therefore, the output of the program should be the same as the `.asm` file.
+![Program execution example](./images/L1-3.png)
 
-**Interesting fact**: it is possible to generate the output binary of the program using the command `nasm file_name.asm` 
-(click [here](https://www.nasm.us/) to download nasm). The generated binary can be compared to the input file to verify if the program is correct. 
-In Windows, to compare two binary files, simply use the command `fc file1 file2`.
+The program receives as the first input parameter the name of the file to be read and prints the
+screen decoding. The figure below shows an example of running the program.
 
-Link for the code: [Lesson 1](https://github.com/amelco/cpusim/commit/cb10100c4bbd553a723317b0c8ace3d556677f5d).
+![Program execution example](./images/L1-1.png)
+
+**Note**: You can optionally run debug mode for more information
+about what is going on, such as the values being temporarily read from the file.
+
+![Program execution example](./images/L1-2.png)
+
+The respective `.asm` extension files contain the 8086 assembly code that generated the input files.
+Therefore, the output result of the program must be the same as the `.asm` file.
+
+**Interesting fact**: It is possible to binary output the program using the command `nasm filename.asm`
+(click [here](https://www.nasm.us/) to download nasm).
+The generated binary can be compared with the input file to verify that the program is correct.
+On windows, to compare two binary files, just use the command `fc file1 file2`.
+
+Link to code: [Lesson 1](https://github.com/amelco/cpusim/commit/cb10100c4bbd553a723317b0c8ace3d556677f5d).
